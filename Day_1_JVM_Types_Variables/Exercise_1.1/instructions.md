@@ -1,6 +1,6 @@
 # Exercise 1.1 — Type Explorer
 
-Create TypeExplorer.java.
+Create `TypeExplorer.java`.
 
 1. Write one variable of each type (int, long, double, boolean, char, String).
 2. Print each one with a label.
@@ -8,7 +8,8 @@ Create TypeExplorer.java.
    contains a specific word.
 4. Expected output format:
 
-```int: 42
+```
+int: 42
 long: 9999999999
 double: 3.14159
 boolean: true
