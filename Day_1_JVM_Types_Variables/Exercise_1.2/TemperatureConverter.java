@@ -29,7 +29,7 @@ public class TemperatureConverter {
         return "Hot";
     }
 
-    public static void main(String[] args) {
+    public static void main() {
 
         System.out.println("40.5°C to °F - " + celsiusToFahrenheit(40.5));
         System.out.println("40.5°F to °C - " + fahrenheitToCelsius(40.5));
