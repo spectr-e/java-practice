@@ -1,6 +1,6 @@
-# Exercise 1.2 — Grade Calculator
+# Exercise 2.1 — Grade Calculator
 
-Create GradeCalculator.java with these methods:
+Create `GradeCalculator.java` with these methods:
 
 ```java
     public static char letterGrade(int score)           // returns 'A', 'B', 'C', 'D', 'F'
