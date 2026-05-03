@@ -46,9 +46,15 @@ public class SimpleInventory {
     }
 
     public static int getQuantity(String name) {
+        // 1. find the item first
+        for (int i = 0; i < itemNames.length; i++) {
+            if (name.equals(itemNames[i])) {
+                return quantities[i];
+            }
+        }
+
         // returns -1 if not found
-        int qty = 0;
-        return qty;
+        return -1;
     }
 
     public static boolean updateQuantity(String name, int newQty) {
