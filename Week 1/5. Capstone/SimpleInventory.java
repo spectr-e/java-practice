@@ -27,7 +27,7 @@ public class SimpleInventory {
         // In a fixed-size array, you cannot truly remove a slot to make the array smaller.
         // Instead, you must nullify the data and shift the remaining items to close the gap.
 
-        for (int i = 0; i < itemNames.length; i++) {
+        for (int i = 0; i < itemCount; i++) {
             if (name.equals(itemNames[i])) {
 
                 // shift items to the left to fill the gap
@@ -36,9 +36,11 @@ public class SimpleInventory {
                     quantities[j] = quantities[j + 1];
                 }
 
-                itemNames[i] = null;
-                quantities[i] = 0;
+                itemNames[itemCount - 1] = null;
+                quantities[itemCount - 1] = 0;
                 itemCount--;
+
+                return true;
             }
         }
         // returns false if not found
