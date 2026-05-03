@@ -8,8 +8,6 @@ public class SimpleInventory {
 
     // Methods you must implement:
     public static boolean addItem(String name, int quantity) {
-        // returns false if inventory full
-
         // 1. check if inventory is full
         if (itemCount > itemNames.length) {
             return false;
@@ -26,9 +24,25 @@ public class SimpleInventory {
     }
 
     public static boolean removeItem(String name) {
-        // returns false if not found
+        // In a fixed-size array, you cannot truly remove a slot to make the array smaller.
+        // Instead, you must nullify the data and shift the remaining items to close the gap.
 
-        return true;
+        for (int i = 0; i < itemNames.length; i++) {
+            if (name.equals(itemNames[i])) {
+
+                // shift items to the left to fill the gap
+                for (int j = i; j < itemCount - 1; j++) {
+                    itemNames[j] = itemNames[j + 1];
+                    quantities[j] = quantities[j + 1];
+                }
+
+                itemNames[i] = null;
+                quantities[i] = 0;
+                itemCount--;
+            }
+        }
+        // returns false if not found
+        return false;
     }
 
     public static int getQuantity(String name) {
