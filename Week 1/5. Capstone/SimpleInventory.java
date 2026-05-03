@@ -67,24 +67,41 @@ public class SimpleInventory {
             }
         }
 
-        // 3. return false if the item is found
+        // 3. return false if the item is not found
         return false;
     }
 
     public static void printInventory() {
-
+        for (int i = 0; i < itemCount - 1; i++) {
+            System.out.println("{ item: '" + itemNames[i] + "', quantity: " + quantities[i] + " }");
+        }
     }
 
     public static int getTotalItems() {
+        int sumOfQty = 0;
+        for (int i = 0; i < itemCount - 1; i++) {
+            sumOfQty += quantities[i];
+        }
         // sum of all quantities
-        int items = 0;
-        return items;
+        return sumOfQty;
     }
 
     public static String findLowStock(int threshold) {
         // CSV of items below threshold
-        String lowStock = "";
-        return lowStock;
+        String lowStockReport = "";
+
+        for (int i = 0; i < itemCount - 1; i++) {
+            if (quantities[i] < threshold) {
+                // if report isn't empty, add a comma before
+                if (!lowStockReport.equals("")) {
+                    lowStockReport += ", ";
+                }
+
+                // add the item name to string
+                lowStockReport += itemNames[i];
+            }
+        }
+        return lowStockReport;
     }
 
 }
